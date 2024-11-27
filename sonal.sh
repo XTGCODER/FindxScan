@@ -43,20 +43,23 @@ go install -v github.com/aztecrabbit/bugscanner-go@latest
 echo "Setting up storage access..."
 termux-setup-storage -y
 
-# Create symlinks for easy access to storage directories
-ln -s /storage/emulated/0 ~/storage/shared
-ln -s /storage/emulated/0/Download ~/storage/downloads
-ln -s /storage/emulated/0/DCIM ~/storage/dcim
-ln -s /storage/emulated/0/Pictures ~/storage/pictures
+# Create symlinks for easy access to storage directories if they don't exist
+if [ ! -d ~/storage ]; then
+    ln -s /storage/emulated/0 ~/storage/shared || echo "Failed to create symlink for shared storage"
+    ln -s /storage/emulated/0/Download ~/storage/downloads || echo "Failed to create symlink for downloads"
+fi
 
 # Additional useful commands
-echo "Creating a new directory for projects..."
-mkdir ~/projects
+if [ ! -d ~/projects ]; then
+    echo "Creating a new directory for projects..."
+    mkdir ~/projects
+fi
 
 echo "Setting up a Python virtual environment (optional)..."
-pkg install python-virtualenv -y
-mkdir ~/venvs && cd ~/venvs && virtualenv myenv
+if [ ! -d ~/venvs ]; then
+    mkdir ~/venvs && cd ~/venvs && python3 -m venv myenv || echo "Failed to create virtual environment"
+fi
 
 # Completion message
 echo "Installation complete! You can now use Subfinder, Bugscanner, and access your phone's storage."
-termux-reload-settings
+cd
