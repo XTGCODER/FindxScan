@@ -2,6 +2,9 @@
 ## USAGE
 
 ```
+pkg install git -y
+```
+```
 git clone https://github.com/XTGCODER/FindxScan
 ```
 ```
