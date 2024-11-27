@@ -14,7 +14,7 @@ chmod +x sonal.sh
 ./sonal.sh
 ```
 ```
-subfinder -d kota.in > ~/storage/downloads/Domains.txt
+subfinder -d sonal.in > ~/storage/downloads/Domains.txt
 ```
 ```
 bugscanner ~/storage/downloads/Domains.txt
