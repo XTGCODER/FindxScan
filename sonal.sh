@@ -49,9 +49,9 @@ if [ ! -d ~/storage ]; then
     ln -s /storage/emulated/0/Download ~/storage/downloads || echo "Failed to create symlink for downloads"
 fi
 
-# Completion message
-echo "Going To Home Directory."
-cd..
+# Navigate to home directory after all installations are complete
+echo "Navigating to the home directory..."
+cd ~
 
 # Completion message
 echo "Installation complete! You can now use Subfinder, Bugscanner, and access your phone's storage."
