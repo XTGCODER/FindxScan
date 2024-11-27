@@ -59,3 +59,4 @@ mkdir ~/venvs && cd ~/venvs && virtualenv myenv
 
 # Completion message
 echo "Installation complete! You can now use Subfinder, Bugscanner, and access your phone's storage."
+termux-reload-settings
