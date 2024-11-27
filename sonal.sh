@@ -49,17 +49,9 @@ if [ ! -d ~/storage ]; then
     ln -s /storage/emulated/0/Download ~/storage/downloads || echo "Failed to create symlink for downloads"
 fi
 
-# Additional useful commands
-if [ ! -d ~/projects ]; then
-    echo "Creating a new directory for projects..."
-    mkdir ~/projects
-fi
-
-echo "Setting up a Python virtual environment (optional)..."
-if [ ! -d ~/venvs ]; then
-    mkdir ~/venvs && cd ~/venvs && python3 -m venv myenv || echo "Failed to create virtual environment"
-fi
+# Completion message
+echo "Going To Home Directory."
+cd..
 
 # Completion message
 echo "Installation complete! You can now use Subfinder, Bugscanner, and access your phone's storage."
-cd
