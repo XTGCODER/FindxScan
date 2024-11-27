@@ -41,7 +41,7 @@ go install -v github.com/aztecrabbit/bugscanner-go@latest
 
 # Setup storage access
 echo "Setting up storage access..."
-termux-setup-storage
+termux-setup-storage -y
 
 # Create symlinks for easy access to storage directories
 ln -s /storage/emulated/0 ~/storage/shared
