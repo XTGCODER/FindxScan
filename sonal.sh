@@ -42,4 +42,4 @@ echo "Navigating to the home directory..."
 cd ~
 
 # Completion message
-echo "Installation complete! You can now use Subfinder and access your phone's storage."
+echo "Installation complete! You can now use Subfinder and Bugscanner-Go, and access your phone's storage."
