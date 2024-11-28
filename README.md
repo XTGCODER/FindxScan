@@ -43,12 +43,7 @@ To Find Subdomains**
    ```bash
    subfinder -dL ~/storage/downloads/Host.txt > ~/storage/downloads/Subdomains.txt
 
-2. **Run Bugscanner
-To Find Vulnerabilities/SNI**
-   ```bash
-   bugscanner ~/storage/downloads/Subdomains.txt
-
-3. **Run Bugscanner-Go To Find Vulnerabilities/SNI**
+2. **Run Bugscanner-Go To Find Vulnerabilities/SNI**
    ```bash
    bugscanner-go scan direct -f ~/storage/downloads/Subdomains.txt
 
