@@ -17,11 +17,11 @@ chmod +x sonal.sh
 ./sonal.sh
 ```
 ```
-subfinder -d sonal.in > ~/storage/downloads/Domains.txt
+subfinder -dL  ~/storage/downloads/Host.txt > ~/storage/downloads/Subdomains.txt
 ```
 ```
-bugscanner ~/storage/downloads/Domains.txt
+bugscanner ~/storage/downloads/Subdomains.txt
 ```
 ```
-bugscanner-go scan direct -f ~/storage/downloads/Domains.txt
+bugscanner-go scan direct -f ~/storage/downloads/Subdomains.txt
 ```
