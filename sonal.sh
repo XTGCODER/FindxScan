@@ -10,8 +10,10 @@ pkg install golang -y
 
 # Add Go to PATH
 echo "Configuring Go environment..."
-export PATH=$PATH:$HOME/go/bin >> $home/.bashrc
-source $home/.bashrc
+if ! grep -q 'export PATH="$PATH:$HOME/go/bin"' "$HOME/.bashrc"; then
+    echo 'export PATH="$PATH:$HOME/go/bin"' >> "$HOME/.bashrc"
+fi
+source "$HOME/.bashrc"
 
 # Install Subfinder
 echo "Installing Subfinder..."
@@ -25,10 +27,12 @@ pkg install python python-pip -y
 echo "Installing Bugscanner-Go..."
 go install -v github.com/aztecrabbit/bugscanner-go@latest
 
-# Add Go Bin To PATH
-echo "Configuring PATH Environment..."
-'PATH="$PATH:$HOME/go/bin"' >> $HOME/.bashrc && source $HOME/.bashrc
-'PATH="$PATH:$HOME/go/bin"' >> $HOME/.zshrc && source $HOME/.zshrc
+# Add Go Bin To PATH (this part is redundant since it's already added above)
+# You can remove the following lines if you do not need them:
+if ! grep -q 'export PATH="$PATH:$HOME/go/bin"' "$HOME/.zshrc"; then
+    echo 'export PATH="$PATH:$HOME/go/bin"' >> "$HOME/.zshrc"
+fi
+source "$HOME/.zshrc"
 
 # Setup storage access
 echo "Setting up storage access..."
