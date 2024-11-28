@@ -35,10 +35,6 @@ Follow these steps to set up FindxScan:
    ```bash
    ./sonal.sh
 
-6. **Make The Installation Script Executable**
-   ```bash
-   chmod +x sonal.sh
-
 ## Usage :
 # Once the installation is complete, you can use Subfinder and Bugscanner as follows:
 
