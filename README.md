@@ -40,12 +40,14 @@ Follow these steps to set up FindxScan:
 
 1. **Run Subfinder
 To Find Subdomains**
-   ```bash
-   subfinder -dL ~/storage/downloads/Host.txt > ~/storage/downloads/Subdomains.txt
+```
+subfinder -dL ~/storage/downloads/Host.txt > ~/storage/downloads/Subdomains.txt
+```
 
 2. **Run Bugscanner-Go To Find Vulnerabilities/SNI**
-   ```bash
-   bugscanner-go scan direct -f ~/storage/downloads/Subdomains.txt
+```
+bugscanner-go scan direct -f ~/storage/downloads/Subdomains.txt
+```
 
 # Notes :
 Ensure That Your `Host.txt` file is Located In The ~/storage/downloads/ Directory.
