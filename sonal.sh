@@ -2,7 +2,7 @@
 
 # Update package list and upgrade installed packages
 echo "Updating package list and upgrading installed packages..."
-pkg update && pkg upgrade -y
+pkg update -y && pkg upgrade -y
 
 # Install Go
 echo "Installing Go programming language..."
@@ -26,13 +26,6 @@ pkg install python python-pip -y
 # Install Bugscanner-Go
 echo "Installing Bugscanner-Go..."
 go install -v github.com/aztecrabbit/bugscanner-go@latest
-
-# Add Go Bin To PATH (this part is redundant since it's already added above)
-# You can remove the following lines if you do not need them:
-if ! grep -q 'export PATH="$PATH:$HOME/go/bin"' "$HOME/.zshrc"; then
-    echo 'export PATH="$PATH:$HOME/go/bin"' >> "$HOME/.zshrc"
-fi
-source "$HOME/.zshrc"
 
 # Setup storage access
 echo "Setting up storage access..."
