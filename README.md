@@ -47,9 +47,9 @@ To Find Subdomains**
    ```bash
    bugscanner-go scan direct -f ~/storage/downloads/Subdomains.txt
 
-## Notes :
-# Ensure That Your Host.txt file is Located In The ~/storage/downloads/ Directory.
-# The Output Will Be Saved In Subdomains.txt Within The Same Directory.
+# Notes :
+Ensure That Your `Host.txt` file is Located In The ~/storage/downloads/ Directory.
+The Output Will Be Saved In `Subdomains.txt` Within The Same Directory.
 
 ## Credits
 
