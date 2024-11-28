@@ -10,10 +10,8 @@ pkg install golang -y
 
 # Add Go to PATH
 echo "Configuring Go environment..."
-if ! grep -q 'export PATH="$PATH:$HOME/go/bin"' "$HOME/.bashrc"; then
-    echo 'export PATH="$PATH:$HOME/go/bin"' >> "$HOME/.bashrc"
-fi
-source "$HOME/.bashrc"
+export PATH=$PATH:$HOME/go/bin >> $home/.bashrc
+source $home/.bashrc
 
 # Install Subfinder
 echo "Installing Subfinder..."
@@ -23,21 +21,14 @@ go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 echo "Installing Python and pip..."
 pkg install python python-pip -y
 
-# Install Bugscanner dependencies
-echo "Installing Bugscanner dependencies..."
-pip install requests loguru multithreading
-
-# Clone Bugscanner repository and install it
-echo "Cloning Bugscanner repository..."
-pkg install git -y
-git clone https://github.com/aztecrabbit/bugscanner ~/bugscanner
-
-echo "Installing Bugscanner requirements..."
-cd ~/bugscanner && python3 -m pip install -r requirements.txt
-
 # Install Bugscanner-Go
 echo "Installing Bugscanner-Go..."
 go install -v github.com/aztecrabbit/bugscanner-go@latest
+
+# Add Go Bin To PATH
+echo "Configuring PATH Environment..."
+'PATH="$PATH:$HOME/go/bin"' >> $HOME/.bashrc && source $HOME/.bashrc
+'PATH="$PATH:$HOME/go/bin"' >> $HOME/.zshrc && source $HOME/.zshrc
 
 # Setup storage access
 echo "Setting up storage access..."
@@ -54,4 +45,4 @@ echo "Navigating to the home directory..."
 cd ~
 
 # Completion message
-echo "Installation complete! You can now use Subfinder, Bugscanner, and access your phone's storage."
+echo "Installation complete! You can now use Subfinder and access your phone's storage."
