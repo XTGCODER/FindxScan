@@ -19,6 +19,12 @@ source "$HOME/.bashrc"
 echo "Installing Subfinder..."
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 
+# Check if Subfinder was installed successfully
+if [ ! -f "$HOME/go/bin/subfinder" ]; then
+    echo "Subfinder installation failed. Please check the logs for errors."
+    exit 1
+fi
+
 # Install Python and pip
 echo "Installing Python and pip..."
 pkg install python python-pip -y
@@ -26,6 +32,12 @@ pkg install python python-pip -y
 # Install Bugscanner-Go
 echo "Installing Bugscanner-Go..."
 go install -v github.com/aztecrabbit/bugscanner-go@latest
+
+# Check if Bugscanner-Go was installed successfully
+if [ ! -f "$HOME/go/bin/bugscanner-go" ]; then
+    echo "Bugscanner-Go installation failed. Please check the logs for errors."
+    exit 1
+fi
 
 # Setup storage access
 echo "Setting up storage access..."
@@ -40,6 +52,12 @@ fi
 # Navigate to home directory after all installations are complete
 echo "Navigating to the home directory..."
 cd ~
+
+# Create a configuration directory for Subfinder if it doesn't exist
+if [ ! -d "$HOME/.config/subfinder" ]; then
+    mkdir -p "$HOME/.config/subfinder"
+    echo "Please configure Subfinder by editing the config.yaml file in $HOME/.config/subfinder."
+fi
 
 # Completion message
 echo "Installation complete! You can now use Subfinder and Bugscanner-Go, and access your phone's storage."
